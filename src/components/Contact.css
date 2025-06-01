@@ -1,0 +1,33 @@
+/* src/components/Contact.css */
+.contact-section {
+  padding: 2rem;
+  background-color: white;
+  color: #333;
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-info {
+  flex: 1 1 300px;
+  max-width: 400px;
+  font-size: 1rem;
+}
+
+.map-container {
+  flex: 2 1 500px;
+  max-width: 700px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
