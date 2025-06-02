@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Contact.css';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -18,18 +19,17 @@ function Contact() {
   };
 
   return (
-    <section id="contact" style={{ padding: '2rem', backgroundColor: '#fff' }}>
-      <h2>Contact Me</h2>
-      <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
-        
+    <section id="contact" className="contact-section section">
+      <h2 className="section-header">Contact Me</h2>
+      <div className="contact-container">
         {/* Contact Info */}
-        <div style={{ flex: '1 1 250px', minWidth: '250px' }}>
+        <div className="contact-info">
           <p><strong>Phone:</strong> 9789045440</p>
           <p><strong>Email:</strong> franesh2005@gmail.com</p>
         </div>
 
         {/* Query Form */}
-        <form onSubmit={handleSubmit} style={{ flex: '1 1 300px', minWidth: '300px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <form onSubmit={handleSubmit} className="contact-form">
           <input
             type="text"
             name="name"
@@ -37,7 +37,6 @@ function Contact() {
             value={formData.name}
             onChange={handleChange}
             required
-            style={{ padding: '0.5rem' }}
           />
           <input
             type="email"
@@ -46,7 +45,6 @@ function Contact() {
             value={formData.email}
             onChange={handleChange}
             required
-            style={{ padding: '0.5rem' }}
           />
           <textarea
             name="message"
@@ -55,24 +53,22 @@ function Contact() {
             onChange={handleChange}
             required
             rows="5"
-            style={{ padding: '0.5rem' }}
           />
-          <button type="submit" style={{ padding: '0.7rem', cursor: 'pointer' }}>Send Message</button>
+          <button type="submit">Send Message</button>
         </form>
 
-        {/* Simple Map iframe */}
-        <div style={{ flex: '1 1 300px', minWidth: '300px', height: '300px' }}>
+        {/* Map */}
+        <div className="map-container">
           <iframe
             title="Chennai Location"
             src="https://maps.google.com/maps?q=13.089967,80.176336&z=15&output=embed"
             width="100%"
             height="100%"
             frameBorder="0"
-            style={{ border: 0 }}
             allowFullScreen
+            loading="lazy"
           />
         </div>
-
       </div>
     </section>
   );

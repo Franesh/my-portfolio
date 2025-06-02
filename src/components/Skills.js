@@ -1,6 +1,10 @@
 import React from 'react';
 import './Skills.css';
 
+const tools = [
+  'VS Code', 'Jupyter Notebook', 'Postman', 'Docker', 'GitHub', 'Google Colab', 'Power BI'
+];
+
 function Skills() {
   return (
     <section id="skills" className="skills-section">
@@ -34,29 +38,9 @@ function Skills() {
 
       <h3 className="tools-header">Tools I Use</h3>
       <div className="tools-container">
-        <span>VS Code</span>
-        <span>Jupyter Notebook</span>
-        <span>Postman</span>
-        <span>Docker</span>
-        <span>GitHub</span>
-        <span>Google Colab</span>
-        <span>Power BI</span>
-        <span>VS Code</span>
-        <span>Jupyter Notebook</span>
-        <span>Postman</span>
-        <span>Docker</span>
-        <span>GitHub</span>
-        <span>Google Colab</span>
-        <span>Docker</span>
-        <span>GitHub</span>
-        <span>Google Colab</span>
-        <span>Power BI</span>
-        <span>VS Code</span>
-        <span>Jupyter Notebook</span>
-        <span>Postman</span>
-        <span>Docker</span>
-        <span>GitHub</span>
-        <span>Google Colab</span>
+        {tools.map((tool, index) => (
+          <span key={`tool-${index}`}>{tool}</span>
+        ))}
       </div>
     </section>
   );

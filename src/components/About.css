@@ -1,29 +1,43 @@
-.about-section {
-  padding: 50px 20px;
-  background-color: #ffffff; /* plain white background */
-  color: #000; /* black text */
+/* Use the common section style for padding and centering */
+.section {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+  background: #fff;
+  color: #0a192f; /* uniform text color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .section-header {
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #64ffda;
+  display: inline-block;
+  padding-bottom: 6px;
   text-align: center;
-  color: #0a192f; /* dark text color for contrast */
+  color: #0a192f;
 }
 
 .about-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 2.5rem;
+  width: 100%;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .about-image img {
   width: 300px;
   height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .about-text {
@@ -32,12 +46,13 @@
 }
 
 .about-text p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 15px;
-  color: #333; /* dark gray text for readability */
+  margin-bottom: 1rem;
+  color: #333;
 }
 
+/* Responsive for tablets and smaller devices */
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
@@ -46,9 +61,21 @@
 
   .about-image img {
     width: 250px;
+    margin-bottom: 1.5rem;
   }
 
   .about-text {
     max-width: 100%;
+  }
+}
+
+/* Small mobile tweaks */
+@media (max-width: 480px) {
+  .section-header {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
   }
 }

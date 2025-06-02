@@ -1,34 +1,46 @@
+
 .home-section {
-  padding: 60px 20px;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  margin: 0 auto;
+    align-items: flex-start; /* instead of center */
+  padding-top: 60px; 
+  background-color: #ffffff;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+  /* Removed padding */
 }
 
 .home-content {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 40px;
 }
 
 .home-text {
-  flex: 1;
-  padding: 20px;
+  flex: 1 1 400px;
+  max-width: 600px;
+  /* Removed padding */
 }
 
 .home-text h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  color: #000; /* black or default text color */
 }
 
+/* Change h2 color to theme blue */
 .home-text h2 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #007BFF;
+  color: #64ffda; /* theme blue */
 }
 
 .home-text p {
@@ -37,28 +49,51 @@
   color: #555;
 }
 
+/* Change button colors to theme blue */
 .resume-btn {
   display: inline-block;
   padding: 10px 20px;
-  background: #007BFF;
-  color: #fff;
+  background: #64ffda; /* theme blue */
+  color: #ffffff;
   border-radius: 4px;
   text-decoration: none;
   transition: background 0.3s ease;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  outline: none;
 }
 
 .resume-btn:hover {
-  background: #0056b3;
+  background: #0056b3; /* darker blue */
 }
 
 .home-image {
-  flex: 1;
-  padding: 20px;
+  flex: 1 1 300px;
+  max-width: 400px;
   text-align: center;
+  /* Removed padding */
 }
 
 .home-image img {
-  width: 250px;
+  width: 100%;
+  max-width: 300px;
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+  }
+
+  .home-text, .home-image {
+    max-width: 100%;
+    flex-basis: auto;
+  }
+
+  .home-image img {
+    max-width: 200px;
+  }
 }

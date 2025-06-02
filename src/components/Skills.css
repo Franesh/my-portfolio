@@ -1,42 +1,52 @@
+/* SKILLS SECTION */
 .skills-section {
-  padding: 50px 20px;
-  background-color: #ffffff;
-  color: #000;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.section-header {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  text-align: center;
+.skills-section .section-header {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
   color: #0a192f;
+  border-bottom: 3px solid #64ffda;
+  display: inline-block;
+  padding-bottom: 6px;
+  text-align: center;
 }
 
-/* Skills grid: 2 columns × 3 rows */
 .skills-container {
+  width: 100%;
+  max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, auto);
-  gap: 30px 40px;
-  max-width: 800px;
-  margin: 0 auto 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
+  box-sizing: border-box;
 }
 
 .skill {
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .skill h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #0a192f;
+  margin-bottom: 0.8rem;
+  color: #112240;
+  font-size: 1.4rem;
 }
 
 .skill p {
@@ -44,50 +54,75 @@
   line-height: 1.5;
   color: #333;
 }
-
-/* Tools section redesign: horizontal flex row with icons (optional) */
 .tools-header {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 25px;
+  font-size: 2.4rem;             /* same size as .section-header */
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
   color: #0a192f;
-}.tools-container-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 10px 0;
+  border-bottom: 3px solid #64ffda;  /* same underline style */
+  display: inline-block;
+  padding-bottom: 6px;
 }
 
 .tools-container {
-  display: inline-flex;
-  gap: 15px;
-  white-space: nowrap;
-  animation: scroll-left 20s linear infinite;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;            /* remove padding */
+  margin: 0;             /* remove margin */
+  background: none;      /* remove background */
+  border: none;          /* remove border */
 }
 
-/* duplicate the container content */
-.tools-container > * {
-  flex-shrink: 0;
-  background: #0a192f;
-  color: #fff;
-  padding: 10px 22px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
-  box-shadow: 0 2px 6px rgba(10,25,47,0.7);
-  user-select: none;
+.tools-container span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;           /* rounded corners */
+  font-size: 0.95rem;
+  font-weight: 700;             /* bold text */
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
 }
 
-/* Scroll animation: move container from 0 to -50% (half width), because content is duplicated */
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
+.tools-container span:hover {
+  background-color: #64ffda;    /* subtle teal background on hover */
+  color: #0a192f;               /* dark text color on hover */
+  box-shadow: 0 4px 12px rgba(100, 255, 218, 0.5); /* gentle glow */
+  transform: translateY(-3px);  /* small lift effect */
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 40px 15px;
   }
-  100% {
-    transform: translateX(-50%);
+
+  .skills-section .section-header {
+    font-size: 2rem;
+  }
+
+  .tools-header {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 30px 10px;
+  }
+
+  .skills-section .section-header {
+    font-size: 1.8rem;
+  }
+
+  .skill h3 {
+    font-size: 1.2rem;
+  }
+
+  .skill p {
+    font-size: 0.95rem;
   }
 }

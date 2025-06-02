@@ -4,7 +4,7 @@ import aboutIcon from '../assets/home-main.svg';
 
 function About() {
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="section about-section">
       <h2 className="section-header">LET ME INTRODUCE MYSELF</h2>
       <div className="about-container">
         <div className="about-image">

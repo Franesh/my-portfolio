@@ -1,19 +1,29 @@
 .projects-section {
-  padding: 3rem 1rem;
-  background: #fff; /* same plain white background */
-  max-width: 900px;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  background: #fff;
+  max-width: 1200px;
+  
   margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .section-header {
   font-size: 2.4rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto; /* centers horizontally and adds bottom margin */
   color: #0a192f;
   border-bottom: 3px solid #64ffda;
   display: inline-block;
   padding-bottom: 6px;
 }
+
+
+
 
 .projects-container {
   display: grid;
@@ -55,4 +65,11 @@
 
 .project-link:hover {
   text-decoration: underline;
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 2rem 1rem;
+  }
 }
